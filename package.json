@@ -1,0 +1,27 @@
+{
+  "name": "api-el-geladon",
+  "version": "1.0.0",
+  "description": "Aplicação consistirá em um CRUD completo no backend em nodeJs, utilizando o framework express, além de introduzir novos aspectos como as camadas de routes e service que, em conjunto com o controller.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hoffmann-Ferreira/API-El-Geladon.git"
+  },
+  "keywords": [],
+  "author": "Andrei Hoffmann Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hoffmann-Ferreira/API-El-Geladon/issues"
+  },
+  "homepage": "https://github.com/Hoffmann-Ferreira/API-El-Geladon#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
