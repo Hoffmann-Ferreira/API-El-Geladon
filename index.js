@@ -1,7 +1,9 @@
 import express from "express";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 const port = 3005;
 
 //Banco de dados local;
@@ -42,11 +44,11 @@ app.listen(port, () => {
 //   res.send('Hello World');
 // });
 
-app.get("/paletas/find-paletas", (req, res) =>{
+app.get("/paletas/find-paletas/", (req, res) =>{
   res.send(paletas);
 });
 
-app.get("/paletas/find-paletas", (req, res) =>{
+app.get("/paletas/find-paletas/", (req, res) =>{
   const idParam = req.params.id;
   const chosenPaleta = paletas.find((paleta) => paleta.id == idParam);
   res.send(chosenPaleta);
