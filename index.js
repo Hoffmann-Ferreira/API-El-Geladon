@@ -1,5 +1,5 @@
-import express from "express";
-import cors from "cors";
+import express, { response } from 'express';
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
@@ -34,22 +34,27 @@ const paletas = [
   },
 ];
 
-// servidor local
-app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+//Rotas
+
+app.get('/', function (req, res) {
+  res.send('Hello World');
 });
 
-//Rotas
-// app.get('/', function (req, res) {
-//   res.send('Hello World');
-// });
-
-app.get("/paletas/find-paletas/", (req, res) =>{
+app.get('/paletas/find-paletas/', (req, res) => {
   res.send(paletas);
 });
 
-app.get("/paletas/find-paletas/", (req, res) =>{
+app.get('/paletas/find-paletas/:id', (req, res) => {
   const idParam = req.params.id;
   const chosenPaleta = paletas.find((paleta) => paleta.id == idParam);
+
+  if(chosenPaleta === undefined){
+    return response.status(404).send("Paleta inexistente")
+  };
   res.send(chosenPaleta);
+});
+
+// servidor local
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });
