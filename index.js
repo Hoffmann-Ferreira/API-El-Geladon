@@ -40,11 +40,11 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
-app.get('/paletas/find-paletas/', (req, res) => {
+app.get('/paletas/lista-todas/', (req, res) => {
   res.send(paletas);
 });
 
-app.get('/paletas/find-paletas/:id', (req, res) => {
+app.get('/paletas/paleta/:id', (req, res) => {
   const idParam = req.params.id;
   const chosenPaleta = paletas.find((paleta) => paleta.id == idParam);
 
