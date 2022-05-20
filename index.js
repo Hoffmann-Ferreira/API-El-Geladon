@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
-app.get('/paletas/lista-todas/', (req, res) => {
+app.get('/paletas/listar-todas/', (req, res) => {
   res.send(paletas);
 });
 

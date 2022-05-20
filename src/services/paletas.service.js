@@ -1,7 +1,7 @@
 import paletas from "../database";
 
 class PaletasServices {
-    ListarTodas() {
+    listarTodas() {
         return paletas;
 
     }
