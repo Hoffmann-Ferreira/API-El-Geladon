@@ -1,5 +1,6 @@
 import express, { response } from 'express';
 import cors from 'cors';
+import paletasRouter from './src/routes/paletas.routes';
 
 const app = express();
 app.use(express.json());
@@ -13,19 +14,21 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
-app.get('/paletas/listar-todas/', (req, res) => {
-  res.send(paletas);
-});
+app.use("/paletas", paletasRouter);
 
-app.get('/paletas/paleta/:id', (req, res) => {
-  const idParam = req.params.id;
-  const chosenPaleta = paletas.find((paleta) => paleta.id == idParam);
+// app.get('/paletas/listar-todas/', (req, res) => {
+//   res.send(paletas);
+// });
 
-  if(chosenPaleta === undefined){
-    return response.status(404).send("Paleta inexistente")
-  };
-  res.send(chosenPaleta);
-});
+// app.get('/paletas/paleta/:id', (req, res) => {
+//   const idParam = req.params.id;
+//   const chosenPaleta = paletas.find((paleta) => paleta.id == idParam);
+
+//   if(chosenPaleta === undefined){
+//     return response.status(404).send("Paleta inexistente")
+//   };
+//   res.send(chosenPaleta);
+// });
 
 // servidor local
 app.listen(port, () => {
