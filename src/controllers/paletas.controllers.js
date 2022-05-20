@@ -10,9 +10,10 @@ class PaletasControllers {
   }
 
   listarUmaPaletaPorId(req, res) {
-    const idParam = +req.params.id;
+    const id= +req.params.id;
 
-    const paleta = paletasServices.listarUmaPaletaPorId(idParam);
+    const paleta = paletasServices.listarUmaPaletaPorId({id});
+
     res.send(paleta);
   }
 }

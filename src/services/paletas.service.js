@@ -4,8 +4,8 @@ class PaletasServices {
   listarTodas() {
     return paletas;
   }
-  listarUmaPaletaPorId(id) {
-    const selecionadaPaleta = paletas.find((paleta) => paleta.id == idParam);
+  listarUmaPaletaPorId({id}) {
+    const selecionadaPaleta = paletas.find((elem) => elem.id == id);
     return selecionadaPaleta;
   }
 }
