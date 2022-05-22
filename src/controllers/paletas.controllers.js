@@ -7,7 +7,7 @@ class PaletasControllers {
     const paletas = paletasServices.listarTodas();
 
     res.send(paletas);
-  }
+  };
 
   listarUmaPaletaPorId(req, res) {
     const id= +req.params.id;
@@ -15,7 +15,20 @@ class PaletasControllers {
     const paleta = paletasServices.listarUmaPaletaPorId({id});
 
     res.send(paleta);
-  }
-}
+  };
 
-export default PaletasControllers
+  criarNovaPaleta( req, res){
+    const {sabor, descricao, foto, preco} = req.body;
+
+    const novaPaleta =  paletasServices.criarNovaPaleta({
+      sabor, 
+      descricao, 
+      foto, 
+      preco,
+    });
+    
+    res.status(201).send(novaPaleta);
+  };
+};
+
+export default PaletasControllers;
