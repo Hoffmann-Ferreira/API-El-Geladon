@@ -12,14 +12,9 @@ class PaletasControllers {
   listarUmaPaletaPorId(req, res) {
     const id= +req.params.id;
 
-    try{
-      const paleta = paletasServices.listarUmaPaletaPorId({id});
+    const paleta = paletasServices.listarUmaPaletaPorId({id});
 
-      res.send(paleta);
-
-    } catch (error) {
-      res.status(error.status).send(error.message);
-    };
+    res.send(paleta);
 
   };
 
