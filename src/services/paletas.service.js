@@ -2,6 +2,10 @@ import paletas from '../database';
 
 class PaletasServices {
   listarTodas() {
+    if(paletas.length === 0) {
+      throw {status: 404, message: "Nenhuma paleta cadastrada"}
+    };
+    
     return paletas;
   };
 
