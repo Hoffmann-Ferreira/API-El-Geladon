@@ -10,6 +10,6 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
-app.use("/paletas", paletasRouter);
+app.use('/paletas', paletasRouter);
 
-export default app
+export default app;

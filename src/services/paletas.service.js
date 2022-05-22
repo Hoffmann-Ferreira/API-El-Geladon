@@ -2,22 +2,23 @@ import paletas from '../database';
 
 class PaletasServices {
   listarTodas() {
-    if(paletas.length === 0) {
-      throw {status: 404, message: "Nenhuma paleta cadastrada"}
-    };
-    
+    if (paletas.length === 0) {
+      throw { status: 404, message: 'Nenhuma paleta cadastrada' };
+    }
+
     return paletas;
-  };
+  }
 
   listarUmaPaletaPorId({ id }) {
     const selecionadaPaleta = paletas.find((elem) => elem.id == id);
-    
-    return selecionadaPaleta;
-  };
 
-  criarNovaPaleta({sabor, descricao, foto, preco}) {
-    const novoId = paletas.length === 0 ? 1 : paletas[paletas.length - 1].id + 1;
-    
+    return selecionadaPaleta;
+  }
+
+  criarNovaPaleta({ sabor, descricao, foto, preco }) {
+    const novoId =
+      paletas.length === 0 ? 1 : paletas[paletas.length - 1].id + 1;
+
     const novaPaleta = {
       id: novoId,
       sabor,
@@ -29,9 +30,9 @@ class PaletasServices {
     paletas.push(novaPaleta);
 
     return novaPaleta;
-  };
+  }
 
-  atualizarPaleta({sabor, descricao, foto, preco, id}) {
+  atualizarPaleta({ sabor, descricao, foto, preco, id }) {
     const paletaAtualizada = {
       id,
       sabor,
@@ -45,14 +46,13 @@ class PaletasServices {
     paletas[paletaIndex] = paletaAtualizada;
 
     return paletaAtualizada;
-  };
+  }
 
-  excluirPaleta({id}) {
+  excluirPaleta({ id }) {
     const paletaIndex = paletas.findIndex((elem) => elem.id === id);
 
     paletas.splice(paletaIndex, 1);
-  };
-
-};
+  }
+}
 
 export default PaletasServices;
