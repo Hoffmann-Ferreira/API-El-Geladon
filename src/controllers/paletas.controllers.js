@@ -41,8 +41,16 @@ class PaletasControllers {
       preco,
       id,
     });
-    
+
     res.send(paletaAtualizada);
+  };
+
+  excluirPaleta(req, res){
+    const id = +req.params.id;
+
+    paletasServices.excluirPaleta({id});
+
+    res.sendStatus(204);
   };
 
 };

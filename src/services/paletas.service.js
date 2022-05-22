@@ -40,7 +40,13 @@ class PaletasServices {
     paletas[paletaIndex] = paletaAtualizada;
 
     return paletaAtualizada;
-  }
+  };
+
+  excluirPaleta({id}) {
+    const paletaIndex = paletas.findIndex((elem) => elem.id === id);
+
+    paletas.splice(paletaIndex, 1);
+  };
 
 };
 
