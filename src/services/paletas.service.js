@@ -7,6 +7,12 @@ class PaletasServices {
 
   listarUmaPaletaPorId({ id }) {
     const selecionadaPaleta = paletas.find((elem) => elem.id == id);
+
+    if(!selecionadaPaleta) {
+      throw { status: 404, message: "Paleta não encontrada!"}
+
+    }
+    
     return selecionadaPaleta;
   };
 
