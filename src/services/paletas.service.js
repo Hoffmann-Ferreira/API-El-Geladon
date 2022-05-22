@@ -27,6 +27,11 @@ class PaletasServices {
       preco,
     };
 
+    if(!sabor || !descricao || !foto || !preco) {
+      throw { status: 400, message: "Cadastre todas as informações para criar uma nova paleta!"
+    }
+  };
+
     paletas.push(novaPaleta);
 
     return novaPaleta;

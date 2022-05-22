@@ -26,14 +26,21 @@ class PaletasControllers {
   criarNovaPaleta( req, res){
     const {sabor, descricao, foto, preco} = req.body;
 
-    const novaPaleta =  paletasServices.criarNovaPaleta({
-      sabor, 
-      descricao, 
-      foto, 
-      preco,
-    });
-    
-    res.status(201).send(novaPaleta);
+    try{
+
+      const novaPaleta =  paletasServices.criarNovaPaleta({
+        sabor, 
+        descricao, 
+        foto, 
+        preco,
+      });
+      
+      res.status(201).send(novaPaleta);
+      
+    }catch (error) {
+      res.status(error.status).send(error.message);
+    };
+
   };
 
   atualizarPaleta(req, res) {
