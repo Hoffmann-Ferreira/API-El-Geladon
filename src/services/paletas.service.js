@@ -25,6 +25,23 @@ class PaletasServices {
 
     return novaPaleta;
   };
+
+  atualizarPaleta({sabor, descricao, foto, preco, id}) {
+    const paletaAtualizada = {
+      id,
+      sabor,
+      descricao,
+      foto,
+      preco,
+    };
+
+    const paletaIndex = paletas.findIndex((elem) => elem.id === id);
+
+    paletas[paletaIndex] = paletaAtualizada;
+
+    return paletaAtualizada;
+  }
+
 };
 
 export default PaletasServices;

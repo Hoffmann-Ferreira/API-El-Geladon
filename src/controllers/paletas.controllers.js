@@ -29,6 +29,22 @@ class PaletasControllers {
     
     res.status(201).send(novaPaleta);
   };
+
+  atualizarPaleta(req, res) {
+    const {sabor, descricao, foto, preco} = req.body;
+    const id= +req.params.id;
+
+    const paletaAtualizada = paletasServices.atualizarPaleta({
+      sabor, 
+      descricao,
+      foto,
+      preco,
+      id,
+    });
+    
+    res.send(paletaAtualizada);
+  };
+
 };
 
 export default PaletasControllers;
