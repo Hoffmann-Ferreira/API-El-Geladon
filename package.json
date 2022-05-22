@@ -2,10 +2,10 @@
   "name": "api-el-geladon",
   "version": "1.0.0",
   "description": "Aplicação consistirá em um CRUD completo no backend em nodeJs, utilizando o framework express, além de introduzir novos aspectos como as camadas de routes e service que, em conjunto com o controller.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
