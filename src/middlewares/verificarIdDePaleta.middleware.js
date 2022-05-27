@@ -1,10 +1,16 @@
 
+import mongoose from "mongoose";
 import Paleta from "../models/paletas.model";
 
-const verificarIdDePaletaMiddleware = (req, res, next) => {
+const verificarIdDePaletaMiddleware = async (req, res, next) => {
   const id = req.params.id;
 
-  const paleta = Paleta.findById(id);
+  if(!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).send({ message: "ID inválido"});
+
+  }
+
+  const paleta =  await Paleta.findById(id);
 
   if (!paleta) {
     return res

@@ -52,9 +52,9 @@ class PaletasControllers {
  async excluirPaleta(req, res) {
     const id = req.params.id;
 
-   const paleta = await paletasServices.excluirPaleta({ id });
+  const paleta = await paletasServices.excluirPaleta({ id });
 
-    res.sendStatus(204).send(paleta);
+    res.status(200).send(paleta);
   }
 }
 

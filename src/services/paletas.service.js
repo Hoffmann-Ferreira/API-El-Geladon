@@ -39,10 +39,17 @@ async criarNovaPaleta({ sabor, descricao, foto, preco }) {
       preco,
     };
 
-    await Paleta.updateOne({ _id: id}, paletaAtualizada );
+    try{
+      await Paleta.updateOne({ _id: id}, paletaAtualizada );
 
-    const paleta = await Paleta.findById(id)
+    const paleta = await Paleta.findById(id);
+    
     return paleta;
+
+    } catch(error){
+      throw error;
+    };
+  
   }
 
   async excluirPaleta({ id }) {
