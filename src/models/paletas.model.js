@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 
+
 const {Schema, model} = mongoose;
 
-const paletaSchema = new Schema({
+const PaletaSchema = new Schema({
     sabor:{type: String, required: true, unique: true},
     descricao:{type: String, required: true},
     foto:{type: String, required: true},
@@ -10,6 +11,6 @@ const paletaSchema = new Schema({
 
 });
 
-const Paleta = model('paletas',paletaSchema);
+const Paleta = model('paletas', PaletaSchema);
 
 export default Paleta;

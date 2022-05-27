@@ -1,9 +1,10 @@
-import paletas from '../database';
+
+import Paleta from "../models/paletas.model";
 
 const verificarIdDePaletaMiddleware = (req, res, next) => {
-  const id = +req.params.id;
+  const id = req.params.id;
 
-  const paleta = paletas.find((elem) => elem.id === id);
+  const paleta = Paleta.findById(id);
 
   if (!paleta) {
     return res
