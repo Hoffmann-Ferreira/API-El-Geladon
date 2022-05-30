@@ -4,6 +4,6 @@ import { connectDatabase } from './src/database';
 const port = 3005;
 
 app.listen(port, () => {
-  connectDatabase()
+  connectDatabase();
   console.log(`Servidor rodando em http://localhost:${port}`);
 });

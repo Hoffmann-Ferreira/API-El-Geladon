@@ -2,13 +2,12 @@ import Paleta from '../models/paletas.model';
 
 class PaletasServices {
   async listarTodas() {
-
     const paletas = await Paleta.find();
 
     if (paletas.length === 0) {
       throw { status: 404, message: 'Nenhuma paleta cadastrada' };
-    };
-    
+    }
+
     return paletas;
   }
 
@@ -18,7 +17,7 @@ class PaletasServices {
     return selecionadaPaleta;
   }
 
-async criarNovaPaleta({ sabor, descricao, foto, preco }) {
+  async criarNovaPaleta({ sabor, descricao, foto, preco }) {
     const novaPaleta = {
       sabor,
       descricao,
@@ -39,25 +38,21 @@ async criarNovaPaleta({ sabor, descricao, foto, preco }) {
       preco,
     };
 
-    try{
-      await Paleta.updateOne({ _id: id}, paletaAtualizada );
+    try {
+      await Paleta.updateOne({ _id: id }, paletaAtualizada);
 
-    const paleta = await Paleta.findById(id);
-    
-    return paleta;
+      const paleta = await Paleta.findById(id);
 
-    } catch(error){
+      return paleta;
+    } catch (error) {
       throw error;
-    };
-  
+    }
   }
 
   async excluirPaleta({ id }) {
-
     const paleta = await Paleta.findByIdAndDelete(id);
 
     return paleta;
-    
   }
 }
 
