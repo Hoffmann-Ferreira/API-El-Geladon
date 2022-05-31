@@ -7,6 +7,7 @@ Módulos utilizados:
 *JavaScript
 *Express
 *Nodemon
+*MongoDB
 
 <div style="display: flex;" style="gap: 10;">
 
@@ -19,6 +20,10 @@ Módulos utilizados:
 <img src="https://img.icons8.com/color/144/000000/css3.png" height="150" width="150"/>
 
 <img src="https://img.icons8.com/color/144/000000/html-5--v1.png" height="150" width="150"/>
+
+<img src="https://media.discordapp.net/attachments/967162864408346697/981194792090361916/icons8-mongodb-144.png" height="150" width="150"/>
+
+
 
 </div>
 
