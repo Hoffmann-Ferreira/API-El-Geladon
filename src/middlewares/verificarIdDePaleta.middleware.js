@@ -1,21 +1,17 @@
-
-import mongoose from "mongoose";
-import Paleta from "../models/paletas.model";
+import mongoose from 'mongoose';
+import Paleta from '../models/paletas.model';
 
 const verificarIdDePaletaMiddleware = async (req, res, next) => {
   const id = req.params.id;
 
-  if(!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(400).send({ message: "ID inválido"});
-
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).send({ message: 'ID inválido' });
   }
 
-  const paleta =  await Paleta.findById(id);
+  const paleta = await Paleta.findById(id);
 
   if (!paleta) {
-    return res
-      .status(404)
-      .send('Paleta não encontrada!');
+    return res.status(404).send('Paleta não encontrada!');
   }
 
   next();
