@@ -1,7 +1,7 @@
 import { connect } from 'mongoose';
 
 export const connectDatabase = () => {
-  connect('mongodb://localhost:27017/el-geladon-db', {
+  connect('process.env.MONGO_URI', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -12,3 +12,6 @@ export const connectDatabase = () => {
       console.log(`Erro na conexão com o banco de dados MongoDB: ${err} `);
     });
 };
+
+
+// mongodb://localhost:27017/el-geladon-db
