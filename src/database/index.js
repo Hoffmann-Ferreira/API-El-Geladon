@@ -1,4 +1,5 @@
-import { connect } from 'mongoose';
+import mongoose from 'mongoose';
+const { connect } = mongoose;
 
 export const connectDatabase = () => {
   connect(process.env.MONGO_URI, {

@@ -1,6 +1,6 @@
 import express, { response } from 'express';
 import cors from 'cors';
-import paletasRouter from './src/routes/paletas.routes';
+import paletasRouter from './src/routes/paletas.routes.js';
 
 
 const app = express();

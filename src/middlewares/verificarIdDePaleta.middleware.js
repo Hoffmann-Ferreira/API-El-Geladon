@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Paleta from '../models/paletas.model';
+import Paleta from '../models/paletas.model.js';
 
 const verificarIdDePaletaMiddleware = async (req, res, next) => {
   const id = req.params.id;

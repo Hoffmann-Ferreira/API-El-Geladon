@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Aplicação consistirá em um CRUD completo no backend em nodeJs, utilizando o framework express, além de introduzir novos aspectos como as camadas de routes e service que, em conjunto com o controller.",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node server",
     "dev": "nodemon server"
@@ -25,7 +26,6 @@
     "mongoose": "^6.3.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16",
-    "sucrase": "^3.21.0"
+    "nodemon": "^2.0.16"
   }
 }
